@@ -16,11 +16,11 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                // You can run your tests here
-                // For example, if you have a test suite, you can use:
-                // sh 'pytest'  // or whatever testing framework you're using
+                echo 'Running tests inside the Docker container...'
+            // Run pytest inside the Docker container
+                bat 'docker run --rm jimmythinh1404/tic-tac-toe pytest --junitxml=report.xml'
             }
+            junit 'report.xml'  // Publish test results in Jenkins
         }
 
         stage('Deploy') {
