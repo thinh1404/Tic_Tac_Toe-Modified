@@ -5,9 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Checkout the code from your repository
-                    git 'https://github.com/your_username/your_repository.git'
-                }
                 echo 'Building the application...'
                 sh 'docker login -u jimmythinh1404'
                 sh 'docker build -t your_username/tic-tac-toe .'
