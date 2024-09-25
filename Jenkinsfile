@@ -11,6 +11,7 @@ pipeline {
               
                 // For example, if you have a requirements.txt, you can use:
                 // sh 'pip install -r requirements.txt'
+                }
             }
         }
 
