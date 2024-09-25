@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install Python dependencies from requirements.txt
-RUN pip install --upgrade pip 
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Set the default command to run your Python application
 CMD ["python", "Tic_Tac_Toe.py"]
