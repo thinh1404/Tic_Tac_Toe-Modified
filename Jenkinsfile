@@ -19,7 +19,7 @@ pipeline {
                 script {
                     echo 'Testing the Python Test File'
                     // Run pytest inside the Docker container
-                     bat 'docker run --rm jimmythinh1404/tic-tac-toe python -m pytest test.py --junitxml=report.xml'
+                     python -m pytest test.py
                 }
                  
             }
