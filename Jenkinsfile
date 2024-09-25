@@ -13,6 +13,18 @@ pipeline {
                 }
             }
         }
+
+        stage('Test') {
+            steps {
+                script {
+                    echo 'Testing the Python Test File'
+                    // Run pytest inside the Docker container
+                    // bat 'docker run --rm jimmythinh1404/tic-tac-toe python -m pytest test.py --junitxml= Tic_Tac_Toe_Game.py'
+                }
+                 
+            }
+           
+        }
         stage('Code Quality Checkk')
         {
             environment {
@@ -21,6 +33,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonar') {
                     sh '${scannerHome}/bin/sonar-scanner'
+                }
             }
         }
         stage('Deploy') {
@@ -32,7 +45,7 @@ pipeline {
                 // sh 'scp -r ./* user@yourserver:/path/to/deploy/'
             }
         }
-        
+
         stage('Release') {
             steps {
                 echo 'Releasing the application...'
