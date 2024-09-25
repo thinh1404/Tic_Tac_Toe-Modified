@@ -19,7 +19,7 @@ pipeline {
                 script {
                     echo 'Testing the Python Test File'
                     // Run pytest inside the Docker container
-                     python -m pytest test.py
+                     bat 'docker run --rm jimmythinh1404/tic-tac-toe python -m pytest test.py --junitxml= Tic_Tac_Toe_Game.py'
                 }
                  
             }
