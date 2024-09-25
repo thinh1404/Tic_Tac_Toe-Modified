@@ -17,9 +17,9 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    echo 'Running tests inside the Docker container...'
+                    echo 'Testing the Python Test File'
                     // Run pytest inside the Docker container
-                    bat 'docker run --rm jimmythinh1404/tic-tac-toe pytest --junitxml=test.py'
+                    python -m pytest test.py
                 }
                  
             }
