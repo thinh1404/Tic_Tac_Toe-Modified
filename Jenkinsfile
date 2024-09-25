@@ -6,7 +6,6 @@ pipeline {
             steps {
                 script {
                 echo 'Building the application...'
-                bat 'docker login -u jimmythinh1404'
                 bat 'docker build -t your_username/tic-tac-toe .'
               
                 // For example, if you have a requirements.txt, you can use:
