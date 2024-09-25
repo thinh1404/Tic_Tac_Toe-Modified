@@ -11,4 +11,4 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Set the default command to run your Python application
-CMD ["python", "Tic_Tac_Toe.py"]
+CMD ["python", "Tic_Tac_Toe_Game.py"]
