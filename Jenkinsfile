@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                 echo 'Building the application...'
-                bat 'docker build -t your_username/tic-tac-toe .'
+                bat 'docker build -t jimmythinh1404/tic-tac-toe .'
               
                 // For example, if you have a requirements.txt, you can use:
                 // sh 'pip install -r requirements.txt'
