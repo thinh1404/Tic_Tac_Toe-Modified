@@ -16,11 +16,14 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running tests inside the Docker container...'
-            // Run pytest inside the Docker container
-                bat 'docker run --rm jimmythinh1404/tic-tac-toe pytest --junitxml=report.xml'
+                script {
+                    echo 'Running tests inside the Docker container...'
+                    // Run pytest inside the Docker container
+                    bat 'docker run --rm jimmythinh1404/tic-tac-toe pytest --junitxml=report.xml'
+                }
+                 junit 'report.xml'  // Publish test results in Jenkins
             }
-            junit 'report.xml'  // Publish test results in Jenkins
+           
         }
 
         stage('Deploy') {
