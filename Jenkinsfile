@@ -29,10 +29,11 @@ pipeline {
         {
             environment{
                 scannerHome = tool 'sonar'
+                SONAR_SCANNER = 'SonarScanner'
             }
             steps {
                 withSonarQubeEnv('sonar') {
-                    sh '${scannerHome}/bin/sonar-scanner'
+                    bat "${env.SONAR_SCANNER}/bin/sonar-scanner.bat"
                 }
             }
         }
