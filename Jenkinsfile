@@ -27,9 +27,7 @@ pipeline {
         }
         stage('Code Quality Checkk')
         {
-            environment {
-                scannerHome = tool 'sonar'
-            }
+            def scannerHome = tool 'sonar'
             steps {
                 withSonarQubeEnv('sonar') {
                     bat '${scannerHome}/bin/sonar-scanner.bat'
