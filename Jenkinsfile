@@ -32,9 +32,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('sonar') {
-                    powershell '${scannerHome}/bin/sonar-scanner -X\
-                    -Dsonar.projectKey=tiktoe \
-                    -Dsonar.sources=.'
+                    bat '${scannerHome}/bin/sonar-scanner'
                 }
             }
         }
