@@ -33,7 +33,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('sonar') {
-                    bat "${env.SONAR_SCANNER}\\bin\\sonar-scanner.bat"
+                    bat "${env.scannerHome}\\bin\\sonar-scanner.bat"
                 }
             }
         }
